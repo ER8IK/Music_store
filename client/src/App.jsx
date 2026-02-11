@@ -46,7 +46,7 @@ function App() {
     setLoading(true);
     try {
       const response = await fetch(
-        `/api/songs?page=${pageNum}&pageSize=${PAGE_SIZE}&seed=${seed}&locale=${locale}&avgLikes=${avgLikes}`
+        `https://music-store-wkwh.onrender.com/api/songs?page=${pageNum}&pageSize=${PAGE_SIZE}&seed=${seed}&locale=${locale}&avgLikes=${avgLikes}`
       );
       const data = await response.json();
       
@@ -119,7 +119,7 @@ function App() {
 
     try {
       // Загрузка музыкальных данных
-      const response = await fetch(`/api/music/${songIndex}?seed=${seed}&locale=${locale}`);
+      const response = await fetch(`https://music-store-wkwh.onrender.com/api/music/${songIndex}?seed=${seed}&locale=${locale}`);
       const musicData = await response.json();
 
       await Tone.start();
